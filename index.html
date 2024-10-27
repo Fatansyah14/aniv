@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Question</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+    }
+
+    .question {
+      font-size: 24px;
+      /* margin-bottom: 20px; */
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s;
+      border-radius: 20%;
+    }
+
+    .container {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 40px 60px;
+      border-radius: 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <p class="question">Will you marry me?</p>
+    <div class="buttons">
+      <button class="button" id="yesButton" onclick="sayLove()">Yes</button>
+      <button class="button" id="noButton" onclick="runAway()">No</button>
+    </div>
+  </div>
+
+  <script>
+    const question = document.querySelector('.question');
+    const noButton = document.getElementById('noButton');
+
+    function sayLove() {
+      question.textContent = "I love you too";
+    }
+
+    function runAway() {
+      noButton.style.position = 'absolute';
+      noButton.style.left = `${Math.random() * (window.innerWidth - noButton.offsetWidth)}px`;
+      noButton.style.top = `${Math.random() * (window.innerHeight - noButton.offsetHeight)}px`;
+    }
+  </script>
+</body>
+
+</html>
